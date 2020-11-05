@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <script src="work2.js" type="text/javascript" src="js/jquery.1.4.2-min.js"></script>
+    <style>
+        ul,ol {
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            width:900px;
+            height: 500px;
+            border:10px solid #fff;
+            margin:100px auto;
+            /*相对定位*/
+            position: relative;
+        }
+        .banner{
+            width:900px;
+            height: 500px;
+            /*超出范围的图片隐藏*/
+            overflow: hidden;
+        }
+        .banner ul{
+            width: 5400px;
+            height: 500px;
+        }
+        .banner ul li{
+            width:900px;
+            height: 500px;
+            float: left;
+            position: relative;
+        }
+        .banner ul li span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            border-radius: 50%;
+            cursor:pointer;
+        }
+        .banner ul li a{
+            display: block;
+            width:900px;
+            height: 500px;
+        }
+        .banner ul li a img{
+            display: block;
+            width:900px;
+            height: 500px;
+        }
+        /*导航点*/
+        .propagation{
+            width: 900px;
+            height: 20px;
+            /*background-color:rgba(0,0,0,1);*/
+            /*绝对定位*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .propagation ol{
+            width:156px;
+            height: 20px;
+            /*background-color: #fff;*/
+            margin: 0 auto;
+        }
+        .propagation ol li{
+            width: 16px;
+            height: 16px;
+            float: left;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 2px 5px;
+            cursor:pointer
+        }
+        .propagation ol li.current{
+            background-color: aqua;
+        }
+         /*.handle{}*/
+         .handle .btn-left,.handle .btn-right{
+            width:60px;
+            height: 60px;
+            background-color:rgba(255,255,255,0.3);
+            position: absolute;
+            top:50%;
+            margin-top: -30px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 50px;
+         }
+         .handle .btn-left{
+            left: 0;
+         }
+         .handle .btn-right{
+            right:0;
+         }
+         /*最大元素*/
+         .wrapper:hover .handle .btn-left,
+         .wrapper:hover .handle .btn-right{
+            background-color:rgba(255,255,255,0.8);
+         }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <ul>
+                <li><span>1</span><a href="javascript:;"><img src="./img/1.jpeg" alt=""></a></li>
+                <li><span>2</span><a href="javascript:;"><img src="./img/2.jpeg" alt=""></a></li>
+                <li><span>3</span><a href="javascript:;"><img src="./img/3.jpeg" alt=""></a></li>
+                <li><span>4</span><a href="javascript:;"><img src="./img/4.jpeg" alt=""></a></li>
+            </ul>
+        </div>
+        <!--导航点-->
+        <div class="propagation">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="handle">
+            <div class="btn-left">&lt;</div>
+            <div class="btn-right">&gt;</div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    //实现轮播图自动播放
+    //实现导航点跟随轮播图切换高亮
+    //鼠标移入轮播图暂停轮播，鼠标离开轮播图继续执行轮播
+    //点击导航点，实现轮播图切换图片 当前点击的导航点标签高亮，非当前点击的标签不高亮
+    //点击左右按钮切换图片
+
+    //步骤
+    //1.获取页面指定标签
+    var wrapperElement=document.getElementsByClassName("wrapper")[0];
+    var pElement=document.getElementsByClassName("propagation")[0];
+    var btnLeft=document.getElementsByClassName("btn-left")[0];
+    var btnRight=document.getElementsByClassName("btn-right")[0];
+    //ul标签
+    var ulElement=wElement.getElementsByTagname("ul")[0];
+    //图片的li标签
+    var liElements=ulElement.getElementsByTagname("li");
+    //导航点的li标签
+    var pointpElements=pElement.getElementsByTagname("li");
+    //console.log(btnRight);
+    //console.log(width);
+    //2.定义每张图片的宽度
+    var width=liElements[0].offsetWidth;
+
+    //3.索引值
+    var index=0;
+
+    //4.定时器变量
+    var timer=null;
+
+    //5.公共函数
+    //dom(元素) proprty(css属性值) value(属性值)
+    var setPosition=function(dom,proprty,value){
+        //设置dom的属性值
+        dom.style[proprty]=value;
+    }
+    //elements(标签数组) key(索引值 形参)
+    var setPropagation=function(elements,key){
+        for(var i=0;i<elements.length;i++){
+            //移除所有导航点的类名
+            elements[i].classList.remove('current');
+        }
+        elements[key].classList.add('current');
+    }
+    var autoPlay=function(){
+        index ++;
+        if(index>(liElements.length)){
+            index=o
+        }
+        ulElement.style.marginLeft=-(index*width)+"px";
+        //setPosition(ulElement,'marginLeft',-(index8width)+"px");
+    
+        for(var i=0;i<pointElements.length;i++){
+            //移除所有导航点的类名
+            pointElements[index].classList.remove('current');
+            //setPropagation(pointElement,index)
+        }
+    }
+    var autoPlay=function(){}
+    //测试完毕
+    //autoPlay();
+
+    //6.执行定时函数
+    timer=setInterval(autoPlay,1000);
+    
+</script>
