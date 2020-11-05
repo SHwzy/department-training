@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <title>MUsl | 时间和星空是世界上最浪漫的东西</title>
+        <style type="text/css">
+
+            body
+            {
+                background-color: black;
+            }
+
+            div
+            {
+                height: px;
+                background-color:#bd8df344
+                overflow: hidden;
+            }
+
+            img
+            {
+                width:100%;
+                height: auto;
+            }
+
+            * {
+				margin: 0;
+				padding: 0;
+			}
+
+			.swiper-contione {
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				margin: 20px auto;
+				position: relative;
+			}
+
+			.swiper {
+				width: 9999999px;
+				height: 400px;
+				transition: all 1s ease;
+			}
+
+			.swiper-item {
+				width: 600px;
+				height: 400px;
+				float: left;
+				position: relative;
+			}
+
+			.swiper-item img {
+				width: 100%;
+				height: auto;
+			}
+
+			.swiper-point {
+				width: 100%;
+				height: 40px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+			}
+
+			.point {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: rgba(60, 100, 138, 0.9);
+				margin-right: 5px;
+				float: left;
+			}
+
+			.point.active {
+				background: #fff;
+			}
+
+			.swiper-left {
+				width: 60px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: -60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+			}
+
+			.swiper-right {
+				width: 60px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				right: -60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+			}
+
+			.swiper-left img,
+			.swiper-right img {
+				cursor: pointer;
+			}
+
+			.swiper-contione:hover .swiper-left {
+				left: 0;
+			}
+
+			.swiper-contione:hover .swiper-right {
+				right: 0;
+			}
+        </style>
+    </head>
+    <body>
+
+        <div>
+            <video src="blob:https://photo.baidu.com/35163605-8172-4da2-8876-457472fa8c4c" type="video/mp4" autoplay="autoplay" muted="muted" height="auto" width="100%" ></video>
+            <audio src="全球高考音频.mp4" type="audio/mp3" controls="controls" autoplay="autoplay" ></audio>
+        </div>
+
+        <div class="swiper-contione">
+			<div class="swiper">
+				<div class="swiper-item">
+					<img src="https://pcsdata.baidu.com/thumbnail/5ba19e319h8735537d61f145066b4d6b?fid=388674334-16051585-120355903615224&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-Q0xR1sv5ElVQ6psKKgSYX1YRO0E%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2232602243&dp-callid=0&time=1604577600&size=c1600_u1600&quality=100&vuk=-&ft=video">
+				</div>
+				<div class="swiper-item">
+					<img src="https://pcsdata.baidu.com/thumbnail/2b6f05357m940b6be6fec7c8e4fe3b7b?fid=388674334-16051585-767632421400230&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-ZUkm%2FWY2p8zH5XxVaiy0HnYlNLA%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2232602243&dp-callid=0&time=1604577600&size=c1600_u1600&quality=100&vuk=-&ft=video">
+				</div>
+				<div class="swiper-item">
+					<img src="https://pcsdata.baidu.com/thumbnail/cf79828fbrc96714de27a1d842956f29?fid=388674334-16051585-123933500479450&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-SpxsF3zjuOeZLegbQu36vD5CtjE%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2232602243&dp-callid=0&time=1604577600&size=c1600_u1600&quality=100&vuk=-&ft=video">
+				</div>
+				<div class="swiper-item">
+					<img src="https://pcsdata.baidu.com/thumbnail/f1e4efcc1m3f876739d8d94e84cd6725?fid=388674334-16051585-783754108804965&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-21fK5bCvcRjiltf%2FCe9sNLT9878%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2232602243&dp-callid=0&time=1604577600&size=c1600_u1600&quality=100&vuk=-&ft=video">
+				</div>
+			</div>
+			<div class="swiper-point">
+				<div class="swiper-point-item">
+					<div class="point active"></div>
+					<div class="point"></div>
+					<div class="point"></div>
+					<div class="point"></div>
+				</div>
+			</div>
+			<div class="swiper-left">
+				<img src="https://pcsdata.baidu.com/thumbnail/bf6fc8ed7m3ecaab6a4400b0f928af64?fid=388674334-16051585-882927456197904&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-SB10WPAVbrsajKHs4OoX%2BQtn3N4%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2684514478&dp-callid=0&time=1604581200&size=c1600_u1600&quality=100&vuk=-&ft=video">
+			</div>
+			<div class="swiper-right">
+				<img src="https://pcsdata.baidu.com/thumbnail/acab418e0t28af7ab7b3607ea98aaac3?fid=388674334-16051585-694166313945538&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-9YqsMBw%2F7zx3doOVMNRfO%2BlKhnw%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2684514478&dp-callid=0&time=1604581200&size=c1600_u1600&quality=100&vuk=-&ft=video">
+			</div>
+        </div>
+        
+        <div>
+            <img src="https://pcsdata.baidu.com/thumbnail/4f616eff4p4f6aad6850d3e7d446484e?fid=388674334-16051585-341986308597566&rt=pr&sign=FDTAER-yUdy3dSFZ0SVxtzShv1zcMqd-09UZxzWV66Rw%2F%2FSS9huEu4wCAPg%3D&expires=2h&chkv=0&chkbd=0&chkpc=&dp-logid=2232602243&dp-callid=0&time=1604577600&size=c1600_u1600&quality=100&vuk=-&ft=video" alt="愿我们在硝烟尽散的世界里重逢" height="300px" width="400px" >
+        </div>
+	</body>
+	<script type="text/javascript">
+		class Swiper {
+			constructor() {
+				this.w = $('.swiper-item').width();
+				this.num = 0;
+				this.len = $('.swiper .swiper-item').length - 1;
+				this.timer = null;
+			}
+			init() {
+				//设置定时器
+				this.setTime();
+				//滑上停止定时器
+				this.hover();
+				//点击指示
+				this.pointClick();
+				//点击左右箭头
+				this.lrClick();
+			}
+			setTime() {
+				this.timer = setInterval(() => {
+					this.num++;	
+					if (this.num > this.len) {
+						this.num = 0;
+					}
+					let cssTrx = -this.num * this.w;
+					$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+					$('.swiper').css({transform: `translateX(${cssTrx}px)`})
+				}, 3000)
+			}
+			hover() {
+				$('.swiper-contione').hover(() => {
+					clearInterval(this.timer)
+				}, () => {
+					this.setTime();
+				});
+			}
+			pointClick() {
+				let that = this;
+				$('.swiper-point-item .point').click(function() {
+					that.num = $(this).index();
+					let cssTrx = -that.num * that.w;
+					$(this).addClass('active').siblings().removeClass('active');
+					$('.swiper').css({
+						transform: `translateX(${cssTrx}px)`
+					})
+				})
+			}
+			lrClick() {
+				$('.swiper-left img').click(() => {
+					this.num--;
+					if (this.num < 0) {
+						this.num = this.len;
+					};
+					console.log(this.num)
+					let cssTrx = -this.num * this.w;
+					$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+					$('.swiper').css({
+						transform: `translateX(${cssTrx}px)`
+					})
+				});
+				
+				$('.swiper-right img').click(() => {
+					this.num++;
+					if (this.num > this.len) {
+						this.num = 0;
+					}
+					let cssTrx = -this.num * this.w;
+					$('.swiper-point-item .point').eq(this.num).addClass('active').siblings().removeClass('active');
+					$('.swiper').css({
+						transform: `translateX(${cssTrx}px)`
+					})
+				})
+			}
+		}
+		let sw = new Swiper();
+		sw.init();
+	</script>
+</html>
