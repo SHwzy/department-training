@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: cadetblue;
+}
+
+.pic {
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    display: none;
+}
+
+#d span {
+    margin: 200;
+    background-color: darkcyan;
+    user-select: none;
+    text-align: center;
+}

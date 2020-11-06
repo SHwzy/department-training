@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8" />
+    <title>轮播图</title>
+    <link href="../css/lunbo.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id='main'>
+
+        <img class="pic" style="display:block;" src="../images/39d853.jpg" />
+        <img class="pic" src="../images/42p67g.jpg" />
+        <img class="pic" src="../images/5w2689.jpg" />
+        <img class="pic" src="../images/5w26x1.jpg" />
+        <img class="pic" src="../images/6kvrkl.png" />
+        <img class="pic" src="../images/6kv966.jpg" />
+        <img class="pic" src="../images/6k9qqq.png" />
+        <div id='d' style="text-align: center;height: 50;">
+            <span onclick=up()>上一张</span>
+            <span onclick=change()>下一张</span>
+        </div>
+    </div>
+    <script>
+        var div = document.getElementById('main');
+        var img = div.getElementsByTagName('img');
+
+
+        var count = 0;
+        var timer = null;
+
+        timer = setInterval(change, 2000);
+
+        function change() {
+
+            for (var i = 0; i < img.length; i++) {
+
+                img[i].style.display = 'none';
+            }
+
+            img[count].style.display = 'block';
+
+            count++;
+            if (count == img.length) {
+
+
+                count = 0;
+            }
+        }
+
+
+        function up() {
+            for (var i = 0; i < img.length; i++) {
+
+                img[i].style.display = 'none';
+            }
+            if (count != 0) {
+                count--;
+            } else {
+                count == img.length
+            }
+
+            img[count].style.display = 'block';
+
+
+            if (count == 0) {
+
+
+                count = img.length;
+            }
+        }
+        div.onmouseover = function() {
+
+            clearInterval(timer);
+        }
+        div.onmouseout = function() {
+            timer = setInterval(change, 2000);
+
+        }
+    </script>
+</body>
+
+</html>
